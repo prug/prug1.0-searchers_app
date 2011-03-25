@@ -1,0 +1,11 @@
+one:
+  body: MyText
+  title: MyString
+  category_id: 1
+  autor_id: 1
+
+two:
+  body: MyText
+  title: MyString
+  category_id: 1
+  autor_id: 1

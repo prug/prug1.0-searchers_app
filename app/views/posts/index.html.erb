@@ -1,0 +1,20 @@
+<% title "Posts" %>
+<%= render :partial => "search_form"%>
+
+  <ul class="search_results">
+    <% @search.each_hit_with_result do |hit, post| -%>
+      <li>
+        <h3><%= post.title %></h3>
+        <p class="summary">
+          <%= post.body %>
+          <br/ >
+          <%=link_to "edit", edit_post_path(post)%>
+        </p>
+        
+      </li>
+    <% end -%>
+  </ul>
+
+
+
+<p><%= link_to "New Post", new_post_path %></p>

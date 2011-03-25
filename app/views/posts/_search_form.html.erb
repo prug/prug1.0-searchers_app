@@ -1,0 +1,14 @@
+<div id="search">
+  <%= form_tag posts_path, :method => :get  do |f| %>
+    <p>
+      <%= label_tag :'keywords' %><br />
+      <%= text_field_tag :'keywords', params[:keywords] %>
+      <%= hidden_field_tag :'category_ids', params[:category_ids] %>
+    </p>
+    <p>
+      <%- Category.all.each do |category| %>
+        <%= link_to "#{category.name} (#{category_count(category.id)})", posts_path(:category_ids => category.id, :keywords => params[:keywords]) %>
+      <% end %>
+    </p>
+  <% end %>
+</div>
